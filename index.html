@@ -1,0 +1,31 @@
+
+  <style>body{ font-family:verdana }</style>
+  <h1>Google Cloud Platform API Speech-to-text</h1>
+  <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+  <br /><br />
+  
+  <audio controls>
+    <source src="/audio-uno.flac" type="audio/flac">
+  </audio><br /><br />
+  <button style="font-size:20pt;cursor:pointer"
+  onclick="$('.rs1').html('Enviando...');  
+  fetch('/audio-uno').then(function(res){ return res.json(); })
+  .then((rs)=>$('.rs1').html('<h3>Resultado Audio-uno:</h3> '+rs.msg));
+  ">Obtener Texto Audio-uno</button>
+  <p class='rs1'></p>
+  <br /><br /><br />
+
+  <audio controls>
+    <source src="/audio-dos.flac" type="audio/flac">
+  </audio><br /><br /><br />
+  <button style="font-size:20pt;cursor:pointer"
+  onclick="$('.rs2').html('Enviando...');
+  fetch('/audio-dos/').then(function(res){ return res.json(); })
+  .then((rs)=>$('.rs2').html('<h3>Resultado Audio-dos:</h3> '+rs.msg));
+  ">Obtener Texto Audio-dos</button>
+  <p class='rs2'></p>
+  <br /><br /><br />
+
+
+
+
